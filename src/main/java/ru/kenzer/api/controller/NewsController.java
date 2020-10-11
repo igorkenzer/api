@@ -1,5 +1,38 @@
 package ru.kenzer.api.controller;
 
-public class NewsController {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import ru.kenzer.api.entity.News;
+import ru.kenzer.api.repo.NewsRepo;
 
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/news")
+public class NewsController {
+     private final NewsRepo newsRepo;
+
+    @Autowired
+    public NewsController(NewsRepo newsRepo) {
+        this.newsRepo = newsRepo;
+    }
+
+    @GetMapping
+    public List<News> list() {
+        return newsRepo.findAll();
+    }
+
+    @GetMapping ("id")
+    public News getOne (@PathVariable("id") News news) {
+        return news;
+    }
+
+    @PostMapping
+    public News create(@RequestBody News news) {
+        return newsRepo.save(news);
+
+
+    }
 }
