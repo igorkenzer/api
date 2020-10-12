@@ -1,0 +1,12 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/igorkenzer/api.git",
+  "author": "kenzer <igor@kenzer.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.12",
+    "vue-resource": "^1.5.1"
+  }
+}
