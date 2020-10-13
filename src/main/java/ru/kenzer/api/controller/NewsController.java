@@ -7,7 +7,7 @@ import ru.kenzer.api.entity.News;
 import ru.kenzer.api.repo.NewsRepo;
 
 import java.util.List;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/news")
