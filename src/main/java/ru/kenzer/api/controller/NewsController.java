@@ -8,7 +8,7 @@ import ru.kenzer.api.repo.NewsRepo;
 
 import java.util.List;
 
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/news")
 public class NewsController {

@@ -10,7 +10,8 @@ new Vue({
     },
     mounted() {
         axios
-            .get('http://127.0.0.1:8080/news')
-            .then(response => (this.info = response));
+            .get('http://127.0.0.1:8080/news/')
+            .then(response => (this.info = response.data.bpi))
+            .catch(error => console.log(error));
     }
 });
