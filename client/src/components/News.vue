@@ -1,6 +1,12 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class=maincard>
+    <div class=card1 v-for="news in newses" :key="news.id">
+      <b-card :title = "news.heading">
+        <b-card-text>
+          {{news.newsbody}}
+        </b-card-text>
+      </b-card>
+    </div>
   </div>
 </template>
 
@@ -11,7 +17,7 @@
     name: 'News',
     data() {
       return {
-        msg: '',
+        newses: '',
       };
     },
     methods: {
@@ -19,7 +25,7 @@
         const path = 'http://192.168.177.188:8080/news';
         axios.get(path)
           .then((res) => {
-            this.msg = res.data;
+            this.newses = res.data;
           })
           .catch((error) => {
             // eslint-выключение следующей строки
