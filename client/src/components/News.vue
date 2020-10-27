@@ -1,11 +1,12 @@
 <template>
-  <div class=maincard>
-    <div class=card1 v-for="news in newses" :key="news.id">
-      <b-card :title = "news.heading">
-        <b-card-text>
-          {{news.newsbody}}
-        </b-card-text>
-      </b-card>
+  <div class="card-group">
+    <div v-for="news in newses" :key="news.id">
+        <b-card bg-variant="dark" text-variant="white" :title = "news.heading">
+          <b-card-text>
+            {{news.newsbody}}
+          </b-card-text>
+          <b-button href="#" variant="primary">Go somewhere</b-button>
+        </b-card>
     </div>
   </div>
 </template>
