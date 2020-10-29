@@ -23,7 +23,7 @@
     },
     methods: {
       getMessage() {
-        const path = 'http://192.168.177.188:8080/news';
+        const path = 'http://127.0.0.1:8080/news';
         axios.get(path)
           .then((res) => {
             this.newses = res.data;
